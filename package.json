@@ -1,0 +1,40 @@
+{
+  "proxy": "http://127.0.0.1:4000",
+  "name":"GreenLife",
+  "version": "1.0.0",
+  "description": "GreenLife project final edition",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "build": "cd front-end && npm run build ",
+    "client-install": "cd front-end && npm install",
+    "heroku_postbuild": "npm run install-client && npm run build",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "server": "nodemon back-end/server --ignore './client/'",
+    "client": "cd front-end && npm start",
+    "data:import": "node back-end/seeder",
+    "data:destroy": "node back-end/seeder -d"
+  },
+  "author": "Nawres et Zahra",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.3",
+    "det": "0.0.4",
+    "dotenv": "^8.2.0",
+    "env": "0.0.2",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
