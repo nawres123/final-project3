@@ -7,9 +7,9 @@
   "type": "module",
   "scripts": {
     "build": "cd front-end && npm run build ",
-    "client-install": "cd front-end && npm install",
+    "install-client": "cd front-end && npm install",
     "heroku_postbuild": "npm run install-client && npm run build",
-    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "start": "concurrently \"npm run client \" \"npm run server\"",
     "server": "nodemon back-end/server --ignore './client/'",
     "client": "cd front-end && npm start",
     "data:import": "node back-end/seeder",
